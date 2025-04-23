@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Deno: test" type="DenoConfigurationType" inputPath="$PROJECT_DIR$/test.ts" programParameters="test --allow-write=log.txt --allow-read=log.txt">
+    <option name="envs">
+      <entry key="TZ" value="America/New_York" />
+    </option>
+    <method v="2" />
+  </configuration>
+</component>

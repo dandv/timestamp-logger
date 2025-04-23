@@ -1,0 +1,46 @@
+{
+    "name": "@dandv/timestamp-logger",
+    "version": "2.0.1",
+    "license": "MIT",
+    "exports": "./mod.ts",
+    "imports": {
+        "clean-stack": "npm:clean-stack@^5.2.0",
+        "serialize-error": "npm:serialize-error@^12.0.0"
+    },
+    "tasks": {
+        "example": "rm test.log; deno run --allow-write --allow-read --allow-sys=homedir example.ts",
+        "test-code": "TZ=America/New_York deno test --allow-write --allow-read",
+        "test-doc": "deno test --allow-write --allow-read --allow-env --allow-sys=homedir --doc mod.ts",
+        "test": {
+            "dependencies": [
+                "test-code",
+                "test-doc"
+            ]
+        },
+        "lint": "deno lint mod.ts test.ts; deno doc --lint mod.ts"
+    },
+    "publish": {
+        "include": [
+            "LICENSE",
+            "README.md",
+            "mod.ts"
+        ],
+        "exclude": [
+            "test.*"
+        ]
+    },
+    "lint": {
+        "rules": {
+            "tags": ["recommended", "jsr"],
+            "include": [
+                "camelcase",
+                "default-param-last", "eqeqeq", "explicit-function-return-type", "no-undef",
+                "explicit-module-boundary-types",
+                "guard-for-in", "no-sync-fn-in-async-fn",
+                "no-non-null-asserted-optional-chain",
+                "no-self-compare", "no-throw-literal",
+                "verbatim-module-syntax"
+            ]
+        }
+    }
+}
