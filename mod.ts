@@ -18,7 +18,7 @@
  * await logger.close();
  * ```
  *
- * # Features
+ * ## Features
  *
  * + prefixes each line with the local time in RFC3339 `YYYY-MM-DD HH:MM:SS` format (which is ISO8601 with a more
  * readable ` ` between the date and the time instead of the `T`)
@@ -52,7 +52,7 @@
  * was logged to the console (e.g. by fully dumping objects beyond the first 3 levels of nesting).
  *
  *
- * # Permissions
+ * ## Permissions
  *
  * You may need to run Deno with the following access flags:
  *
@@ -69,7 +69,7 @@
  * ```
  *
  *
- * # Known issues
+ * ## Known issues
  *
  * 1. Logging something right before calling `Deno/process.exit()` won't flush the output to the file. This is a
  * problem with all loggers (e.g. [Winston](https://github.com/winstonjs/winston/issues/228),

@@ -7,7 +7,7 @@ Configurable logger outputting to the console and optionally to a file, with cle
 ![screenshot](https://user-images.githubusercontent.com/33569/92347070-a4884f00-f083-11ea-8bd6-c49a52fe4e50.png)
 
 
-# Features
+## Features
 
 + prefixes each line with the local time in RFC3339 `YYYY-MM-DD HH:MM:SS` format (which is ISO8601 with a more readable ` ` between the date and the time instead of the `T`) 
 
@@ -38,7 +38,7 @@ Configurable logger outputting to the console and optionally to a file, with cle
 Overall, the package aims to format messages logged to a file as close as possible to the console having been redirected to that file (e.g. by adding newlines for readability), while including more information than what was logged to the console (e.g. by fully dumping objects beyond the first 3 levels of nesting).
 
 
-# Install
+## Install
 
 This is a [JSR](https://deno.com/blog/jsr-is-not-another-package-manager) package.
 
@@ -55,7 +55,7 @@ yarn dlx jsr add @dandv/timestamp-logger
 pnpm dlx jsr add @dandv/timestamp-logger
 ```
 
-# Examples
+## Examples
 
 ```ts
 import { Logger } from '@dandv/timestamp-logger';
@@ -71,7 +71,7 @@ logger.error('Error with clean stack trace', new Error('Oops'));
 For more examples, see [examples.ts](example.ts).
 
 
-# Permissions
+## Permissions
 
 If you're using Deno, you may need to run Deno with the following access flags:
 
@@ -86,7 +86,7 @@ If you're using Deno, you may need to run Deno with the following access flags:
    ```
 
 
-# Known issues
+## Known issues
 
 1. Logging something right before calling `Deno/process.exit()` won't flush the output to the file. This is a problem with all loggers (e.g. [Winston](https://github.com/winstonjs/winston/issues/228), [Bristol](https://github.com/TomFrost/Bristol/issues/55)). As a workaround, try delaying the exit:
 
@@ -101,11 +101,11 @@ If you're using Deno, you may need to run Deno with the following access flags:
 4. Somewhat ironically, `Date` objects logged to the console will be output in UTC, while in the log file they're output in the local timezone (i.e. passed through `.localISOdt`). This is done to preserve console colorization, and may be improved in a future version. In the meantime, you can pass Date objects to `.localISOdt` if desired.
 
 
-# Author
+## Author
 
 [Dan Dascalescu](https://dandv.me)
 
 
-# License
+## License
 
 MIT
